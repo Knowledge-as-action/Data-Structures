@@ -1,0 +1,57 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        // {
+        //     "name": "(Windows) Launch",
+        //     "type": "cppvsdbg",
+        //     "request": "launch",
+        //     "program": "cmd",
+        //     "preLaunchTask": "task g++",
+        //     "args": [
+        //         "/C",
+        //         "${fileDirname}\\${fileBasenameNoExtension}.exe",
+        //         "&",
+        //         // "echo.",
+        //         // "&",
+        //         "pause"
+        //     ],
+        //     "stopAtEntry": false,
+        //     "cwd": "${workspaceFolder}",
+        //     "environment": [],
+        //     "externalConsole": true
+        // },
+        {
+            "name": "g++.exe build and debug active file",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false, //集成终端在底部终端栏输入数据，像vs2019一样，启动调试后显示外部窗口而不是在vscode集成终端进行调试
+            //如果出现闪退：
+            //一：注释掉最上面的代码
+            //二：添加system("pause");   //以便在退出程序前调用系统的暂停命令暂停命令行   来达到运行结束以后，再按任意键才会退出的效果。
+            "MIMode": "gdb",
+            "miDebuggerPath": "E:\\MinGW\\mingw64\\bin\\gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "task g++"
+        }
+    ]
+}
+// GNU：可以看作一个开源平台。里面有大量开源项目。
+// GCC：GNU中的编译器项目。集成了多种语言的编译器，包括有gcc、g++。
+// gcc是GCC中的GUN C Compiler（C 编译器）
+// g++是GCC中的GUN C++ Compiler（C++编译器）
+// GNU -> GCC -> g++
+// 		      -> gcc
