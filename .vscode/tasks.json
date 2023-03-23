@@ -57,8 +57,7 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "g++",
-            
+            "command": "E:\\MinGW\\mingw64\\bin\\g++.exe",
             "args": [
                 "-g",
                 "${file}",
